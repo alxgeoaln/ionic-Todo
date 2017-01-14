@@ -1,14 +1,16 @@
 app.controller('TodosCtrl', function($scope, $firebaseArray, $state, todoService, $ionicActionSheet){
     $scope.todos = todoService.all;
     
-    $scope.saveTodo = function(){
+    $scope.saveTodo = function(name){
+
        $scope.newTodo = todoService.all;
        $scope.newTodo.$add({
-           name: $scope.name
+           name: name
        });
 
        $state.go('todos');
-    }
+        $scope.name = '';
+    };
 
     $scope.removeTodo = function(id){
         $ionicActionSheet.show({
@@ -21,5 +23,7 @@ app.controller('TodosCtrl', function($scope, $firebaseArray, $state, todoService
                 return true;
             }
         });
-    }
-})
+    };
+
+
+});
