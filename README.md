@@ -8,3 +8,4 @@ if you don't have Ionic installed globally the app doesn't open.
 2. ionic serve
 
 The apk file is not the final version of the app.
+You must have internet connection in order to save your data.
